@@ -5,8 +5,8 @@ services:
   postgres:
     image: postgres:14
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: aaron
+      POSTGRES_PASSWORD: Just520
 
   backup:
     build:
@@ -14,9 +14,9 @@ services:
       args:
         ALPINE_VERSION: '3.16'
     environment:
-      SCHEDULE: '@weekly'     # optional
-      BACKUP_KEEP_DAYS: 7     # optional
-      PASSPHRASE: passphrase  # optional
+      SCHEDULE: '@hourly'     # optional
+      BACKUP_KEEP_DAYS: 3     # optional
+      PASSPHRASE: directus  # optional
       S3_REGION:
       S3_ACCESS_KEY_ID:
       S3_SECRET_ACCESS_KEY:
